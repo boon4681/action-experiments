@@ -1,0 +1,16 @@
+name: 'flower'
+
+on: [push]
+jobs:
+  test-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - run: python main.py
+        env:
+          github-username: boon4681
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-repository: boon4681/action-experiments
