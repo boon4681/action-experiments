@@ -2,11 +2,11 @@ import subprocess
 import os
 
 os.mkdir('./export')
-with open('hi.txt','w') as f: 
-    f.write('hi you who see this.')
-
 os.chdir('./export')
 
+with open('hi.txt','w') as f: 
+    f.write('hi you who see this.')
+    
 subprocess.run([
     'git',
     'init',
