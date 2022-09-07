@@ -22,6 +22,7 @@ subprocess.run([
 tags = subprocess.run(['git','remote','-v'], capture_output=True).stdout.decode('utf-8').split('\n')
 add_or_not = 'origin' in tags
 subprocess.run(['git', 'config', 'user.name', 'actions-user'])
+subprocess.run(['git', 'config', 'user.email', 'actions@github.com'])
 subprocess.run(['git', 'remote', 'set-url' if add_or_not else 'add' ,'origin',f'https://x-access-token:{os.getenv("github-token")}@github.com/{os.getenv("github-repository")}'])
 subprocess.run(['git', 'fetch', '-q', '--tags', 'origin', 'hi'])
 subprocess.run(['git', 'reset', '-q', '--hard', f'origin/hi'])
