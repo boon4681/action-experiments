@@ -1,6 +1,6 @@
 name: 'flower'
 
-on: [push]
+on: [push,workflow_dispatch ]
 jobs:
   test-python:
     runs-on: ubuntu-latest
