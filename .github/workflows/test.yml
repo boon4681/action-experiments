@@ -1,6 +1,14 @@
 name: 'flower'
 
-on: [push,workflow_dispatch ]
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Minecraft Version'
+        required: true
+        default: '1.19.2'
+        type: string
 jobs:
   test-python:
     runs-on: ubuntu-latest
