@@ -5,7 +5,7 @@ os.makedirs('./yield',exist_ok=True)
 os.chdir('./yield')
 
 with open('yield.txt','w') as f: 
-    f.write(os.environ['VERSION'])
+    f.write(os.getenv('VERSION'))
 
 subprocess.run(['git','init','-q'])
 subprocess.run(['git', 'checkout', '-q', '-b', 'dumb'], capture_output=True)
