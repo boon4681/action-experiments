@@ -5,20 +5,10 @@ os.makedirs('./yield',exist_ok=True)
 os.chdir('./yield')
 
 with open('yield.txt','w') as f: 
-    f.write('hell you git.')
+    f.write(os.environ['version'])
 
-subprocess.run([
-    'git',
-    'init',
-    '-q'
-])
-subprocess.run([
-    'git', 
-    'checkout', 
-    '-q', 
-    '-b', 
-    'dumb'
-], capture_output=True)
+subprocess.run(['git','init','-q'])
+subprocess.run(['git', 'checkout', '-q', '-b', 'dumb'], capture_output=True)
 subprocess.run(['git', 'config', 'user.name', 'actions-user'])
 subprocess.run(['git', 'config', 'user.email', 'actions@github.com'])
 
